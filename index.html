@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuditFlow - Bial</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <span>AuditFlow</span>
+      <small>Bial Internal Audit</small>
+    </div>
+    <div class="nav-section">
+      <div class="nav-label">Principal</div>
+      <div class="nav-item active" onclick="navigate('dashboard')">
+        <i class="ti ti-layout-dashboard"></i> Dashboard
+      </div>
+      <div class="nav-item" onclick="navigate('plan')">
+        <i class="ti ti-calendar"></i> Plano Anual
+      </div>
+      <div class="nav-item" onclick="navigate('audits')">
+        <i class="ti ti-clipboard-list"></i> Auditorias
+      </div>
+      <div class="nav-item" onclick="navigate('pbc')">
+        <i class="ti ti-file-upload"></i> PbC Requests
+      </div>
+      <div class="nav-item" onclick="navigate('findings')">
+        <i class="ti ti-alert-triangle"></i> Findings
+      </div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-label">Configuração</div>
+      <div class="nav-item" onclick="navigate('library')">
+        <i class="ti ti-books"></i> Biblioteca
+      </div>
+      <div class="nav-item" onclick="navigate('universe')">
+        <i class="ti ti-building"></i> Audit Universe
+      </div>
+      <div class="nav-item" onclick="navigate('users')">
+        <i class="ti ti-users"></i> Utilizadores
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span id="topbar-ctx"><strong>Dashboard</strong></span>
+      </div>
+      <div class="topbar-right">
+        <div class="avatar">RM</div>
+      </div>
+    </div>
+
+    <div class="content" id="main-content">
+      <!-- conteúdo injectado por JS -->
+      <div class="loading-screen">
+        <i class="ti ti-loader-2 spin"></i>
+        <p>A carregar...</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js" type="module"></script>
+</body>
+</html>
